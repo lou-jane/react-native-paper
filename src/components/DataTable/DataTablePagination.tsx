@@ -375,7 +375,7 @@ DataTablePagination.displayName = 'DataTable.Pagination';
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'flex-end',
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     alignItems: 'center',
     paddingLeft: 16,
     flexWrap: 'wrap',
@@ -387,11 +387,11 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 12,
-    marginRight: 16,
+    marginLeft: 16,
   },
   button: {
     textAlign: 'center',
-    marginRight: 16,
+    marginLeft: 16,
   },
   iconsContainer: {
     flexDirection: 'row',

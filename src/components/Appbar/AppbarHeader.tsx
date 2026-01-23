@@ -61,6 +61,10 @@ export type Props = Omit<
    */
   theme?: ThemeProp;
   style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
+  /**
+   * @optional
+   */
+  iconPadding?: number;
 };
 
 /**
