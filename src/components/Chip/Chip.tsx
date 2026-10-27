@@ -401,6 +401,7 @@ const Chip = ({
               labelSpacings,
               textStyle,
             ]}
+            textBreakStrategy="simple"
             ellipsizeMode={ellipsizeMode}
             maxFontSizeMultiplier={maxFontSizeMultiplier}
           >

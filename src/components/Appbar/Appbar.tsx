@@ -66,7 +66,14 @@ export type Props = Omit<
    */
   theme?: ThemeProp;
   style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
+  /**
+   * @optional
+   */
+  iconPadding?: number;
 };
+
+const BASE_V3_SPACING_WIDTH = 36;
+const ICON_PADDING = 8;
 
 /**
  * A component to display action items in a bar. It can be placed at the top or bottom.
@@ -162,6 +169,7 @@ const Appbar = ({
   elevated,
   safeAreaInsets,
   theme: themeOverrides,
+  iconPadding = ICON_PADDING,
   ...rest
 }: Props) => {
   const theme = useInternalTheme(themeOverrides);
@@ -232,7 +240,11 @@ const Appbar = ({
     shouldAddRightSpacing = shouldCenterContent && rightItemsCount === 0;
   }
 
-  const spacingStyle = isV3 ? styles.v3Spacing : styles.spacing;
+  const v3Spacing = {
+    width: BASE_V3_SPACING_WIDTH + 2 * iconPadding,
+  };
+
+  const spacingStyle = isV3 ? v3Spacing : styles.spacing;
 
   const insets = {
     paddingBottom: safeAreaInsets?.bottom,
@@ -347,9 +359,9 @@ const styles = StyleSheet.create({
   spacing: {
     width: 48,
   },
-  v3Spacing: {
-    width: 52,
-  },
+  // v3Spacing: {
+  //   width: 52,
+  // },
   controlsRow: {
     flex: 1,
     flexDirection: 'row',

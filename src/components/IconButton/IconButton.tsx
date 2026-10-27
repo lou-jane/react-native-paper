@@ -90,6 +90,10 @@ export type Props = Omit<$RemoveChildren<typeof TouchableRipple>, 'style'> & {
    * Whether to show a loading indicator.
    */
   loading?: boolean;
+  /**
+   * @optional
+   */
+  iconPadding?: number;
 };
 
 /**
@@ -133,6 +137,7 @@ const IconButton = forwardRef<View, Props>(
       testID = 'icon-button',
       loading = false,
       contentStyle,
+      iconPadding = PADDING,
       ...rest
     }: Props,
     ref
@@ -153,7 +158,7 @@ const IconButton = forwardRef<View, Props>(
         customRippleColor,
       });
 
-    const buttonSize = isV3 ? size + 2 * PADDING : size * 1.5;
+    const buttonSize = isV3 ? size + 2 * iconPadding : size * 1.5;
 
     const {
       borderWidth = isV3 && mode === 'outlined' && !selected ? 1 : 0,

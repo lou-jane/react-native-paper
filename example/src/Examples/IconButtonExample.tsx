@@ -162,7 +162,6 @@ const ButtonExample = () => {
             mode="contained"
             style={styles.slightlyRounded}
             size={24}
-            contentStyle={{ padding: 8 }}
             iconColor={MD3Colors.tertiary50}
             onPress={() => {}}
           />
